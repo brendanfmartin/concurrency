@@ -10,12 +10,12 @@
         document.getElementById('content').innerHTML = BFMConcurrency.mathStuff();
       }
 
-
       // load
       document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('responseTimeInMs').value = BFMConcurrency.responseTimeInMs;
         document.getElementById('concurrency').value = BFMConcurrency.concurrency;
         document.getElementById('recordCount').value = BFMConcurrency.recordCount;
+        document.getElementById('eventsGeneratedPer').value = BFMConcurrency.eventsGeneratedPer;
         update();
       });
     })()
@@ -23,32 +23,50 @@
 </head>
 <body>
   <h1>Concurrency</h1>
-  <form>
-    <label for="responseTimeInMs">Response Time In Ms</label>
-    <input id="responseTimeInMs" type="text" onchange="BFMConcurrency.setResponseTimeInMs(document.getElementById('responseTimeInMs').value)">
-    <br>
-    <label for="concurrency">Concurrency</label>
-    <input id="concurrency" type="text" onchange="BFMConcurrency.setConcurrency(document.getElementById('concurrency').value)">
-    <br>
-    <label for="recordCount">Record Count</label>
-    <input id="recordCount" type="text" onchange="BFMConcurrency.setRecordCount(document.getElementById('recordCount').value)">
+  <div>
+    <div class="input-area">
+      <label for="responseTimeInMs">Response Time In Ms</label>
+      <input id="responseTimeInMs" type="text" onchange="BFMConcurrency.setResponseTimeInMs(document.getElementById('responseTimeInMs').value)">
+    </div>
+    <div class="input-area">
+      <label for="concurrency">Concurrency</label>
+      <input id="concurrency" type="text" onchange="BFMConcurrency.setConcurrency(document.getElementById('concurrency').value)">
+    </div>
+    <div class="input-area">
+      <label for="recordCount">Record Count</label>
+      <input id="recordCount" type="text" onchange="BFMConcurrency.setRecordCount(document.getElementById('recordCount').value)"><br>
+    </div>
+    <div class="input-area">
+      <label for="eventsGeneratedPer">Events per Record</label>
+      <input id="eventsGeneratedPer" type="text" onchange="BFMConcurrency.setEventsGeneratedPer(document.getElementById('eventsGeneratedPer').value)">
+    </div>
     <hr>
     <div class="button" onclick="update()">Update</div>
-  </form>
+  </div>
   <div id="content"></div>
 
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/pure-min.css" integrity="sha384-LTIDeidl25h2dPxrB2Ekgc9c7sEC3CWGM6HeFmuDNUjX76Ert4Z4IY714dhZHPLd" crossorigin="anonymous">
   <style>
-    .button {
-        border: thin solid black;
-        padding: 3px;
-        width: 100px;
-        text-align: center;
-    }
-    .button:hover {
-        cursor: pointer;
-        background: rgba(100,100,100,.2);
-    }
+      body {
+          padding: 10px;
+      }
+      .input-area {
+          padding: 10px 0;
+      }
+      .input-area label {
+          width: 160px;
+          display: inline-block;
+      }
+      .button {
+          border: thin solid black;
+          padding: 3px;
+          width: 100px;
+          text-align: center;
+      }
+      .button:hover {
+          cursor: pointer;
+          background: rgba(100,100,100,.2);
+      }
   </style>
 </body>
 </html>

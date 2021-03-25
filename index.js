@@ -1,15 +1,12 @@
 let responseTimeInMs = 1000;
 let concurrency = 35;
 let recordCount = 3000000;
-let eventsGenerated;
+let eventsGeneratedPer = 3;
 
 const mathStuff = () => {
-  eventsGenerated = 3 * recordCount;
-
+  const eventsGenerated = eventsGeneratedPer * recordCount;
   const requestsPerSec = concurrency / (responseTimeInMs / 1000);
-
   const requestsPerMinute = requestsPerSec * 60;
-
   const minutesToFinish = eventsGenerated / requestsPerMinute;
 
   const toComma = (s) => s.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -29,11 +26,7 @@ const mathStuff = () => {
   </ul>
   `;
 
-  console.log(desc);
-
   return desc;
-
-  // document.getElementById('content').innerHTML = desc;
 }
 
 const setResponseTimeInMs = (value) => {
@@ -48,14 +41,20 @@ const setRecordCount = (value) => {
   recordCount = value;
 }
 
+const setEventsGeneratedPer = (value) => {
+  eventsGeneratedPer = value;
+}
+
 window.BFMConcurrency = {
   mathStuff,
   setResponseTimeInMs,
   setConcurrency,
+  setRecordCount,
+  setEventsGeneratedPer,
   responseTimeInMs,
   concurrency,
   recordCount,
-  setRecordCount
+  eventsGeneratedPer,
 }
 
 mathStuff();
