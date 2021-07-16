@@ -1,5 +1,9 @@
 <html>
 <head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="./index.js"></script>
   <script>
     let update;
@@ -44,7 +48,7 @@
     <div class="button" onclick="update()">Update</div>
   </div>
   <div id="content"></div>
-  <footer><a href="https://github.com/brendanfmartin/concurrency/tree/master">https://github.com/brendanfmartin/concurrency/tree/master</a></footer>
+  <div id="footer"><a href="https://github.com/brendanfmartin/concurrency">GitHub</a></div>
 
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/pure-min.css" integrity="sha384-LTIDeidl25h2dPxrB2Ekgc9c7sEC3CWGM6HeFmuDNUjX76Ert4Z4IY714dhZHPLd" crossorigin="anonymous">
   <style>
@@ -67,6 +71,18 @@
       .button:hover {
           cursor: pointer;
           background: rgba(100,100,100,.2);
+      }
+      #footer {
+          display: inline;
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          height: 10px;
+          font-size: 10px;
+          z-index: 9999;
+      }
+      #footer a {
+          color: black;
       }
   </style>
 </body>
