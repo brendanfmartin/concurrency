@@ -17,7 +17,7 @@ const mathStuff = () => {
   <p>The number of requests per second:          ${requestsPerSec}</p>
   <p>The number of requests per minute:          ${requestsPerMinute}</p>
   
-  With ${toComma(recordCount)} onboards, ${toComma(eventsGenerated)} events will be generated.
+  With ${toComma(recordCount)} records, ${toComma(eventsGenerated)} events will be generated.
   At a rate of ${requestsPerMinute} requests per minute it will take
   <ul>
     <li>${Math.round(minutesToFinish)} minutes to finish.</li>
